@@ -1,5 +1,9 @@
 From ubuntu:24.04
 
-RUN echo "Hello, World!" > /hello.txt
+RUN apt update
 
-CMD ["cat", "/hello.txt"]
+RUN apt install -y golang
+
+WORKDIR /app
+
+COPY ./server.go ./server.go
